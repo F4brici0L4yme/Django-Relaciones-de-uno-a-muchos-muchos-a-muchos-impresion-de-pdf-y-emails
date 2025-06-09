@@ -1,0 +1,8 @@
+<h1>Personajes en {{ pelicula.titulo }}</h1>
+<ul>
+    {% for personaje in personajes %}
+        <li>{{ personaje.nombre }}</li>
+    {% empty %}
+        <li>No hay personajes.</li>
+    {% endfor %}
+</ul>
