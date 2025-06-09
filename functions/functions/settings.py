@@ -45,8 +45,8 @@ INSTALLED_APPS = [
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = 'F4bricio'      # Cambia aquí
-EMAIL_HOST_PASSWORD = 'Elpepe&Etesech1'  # Cambia aquí
+EMAIL_HOST_USER = '3b2e5a044e87da'      # Cambia aquí
+EMAIL_HOST_PASSWORD = '619fd80dc5718e'  # Cambia aquí
 EMAIL_PORT = 2525
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'webmaster@tudominio.com'

@@ -19,7 +19,7 @@ def enviar_email(request):
         )
         return HttpResponseRedirect(reverse('email_enviado'))
 
-    return render(request, 'emails_app/enviar_email.html')
+    return render(request, 'enviar_email.html')
 
 def email_enviado(request):
-    return render(request, 'emails_app/email_enviado.html')
+    return render(request, 'email_enviado.html')
