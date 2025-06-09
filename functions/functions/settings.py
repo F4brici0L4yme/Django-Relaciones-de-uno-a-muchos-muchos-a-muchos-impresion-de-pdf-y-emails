@@ -40,7 +40,17 @@ INSTALLED_APPS = [
     'relacion_uno_muchos',
     'relacion_muchos_muchos',
     'impresion_pdf',
+    'emails',
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'F4bricio'      # Cambia aquí
+EMAIL_HOST_PASSWORD = 'Elpepe&Etesech1'  # Cambia aquí
+EMAIL_PORT = 2525
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'webmaster@tudominio.com'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
