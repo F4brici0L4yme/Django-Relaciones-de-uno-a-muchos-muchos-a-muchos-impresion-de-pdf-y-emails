@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'relacion_muchos_muchos',
     'impresion_pdf',
     'emails',
+    'home',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

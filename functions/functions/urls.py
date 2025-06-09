@@ -22,3 +22,16 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('emails.urls')),
 ]
+
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('home.urls')),
+    path('lenguaje/', include('relacion_uno_muchos.urls')),  # Ejemplo uno
+    path('relacion_muchos_muchos/', include('relacion_muchos_muchos.urls')),  # Ejemplo dos
+    path('boleta/', include('impresion_pdf.urls')),  # PDF boleta
+    path('emails/', include('emails.urls')),  # Emails
+    # Más apps...
+]
+

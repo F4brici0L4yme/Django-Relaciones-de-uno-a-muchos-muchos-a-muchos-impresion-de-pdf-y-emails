@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Índice General - Proyectos Django</title>
+</head>
+<body>
+    <h1>Índice General de Ejemplos</h1>
+    <ul>
+        {% for ejemplo in ejemplos %}
+            <li><a href="{{ ejemplo.url }}">{{ ejemplo.nombre }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
