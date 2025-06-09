@@ -1,38 +1,9 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from django.template.loader import get_template
-from xhtml2pdf import pisa
-import io
+from django.db import models
 
-def generar_boleta_pdf(request):
-    # Simulación de datos (puedes cambiarlos por modelos reales)
-    cliente = {
-        'nombre': 'Yarbis',
-        'correo': 'yarbis@email.com',
-    }
+class Producto(models.Model):
+    nombre = models.CharField(max_length=100)
+    precio = models.DecimalField(max_digits=10, decimal_places=2)
 
-    productos = [
-        {'nombre': 'Laptop', 'precio': 2500.00},
-        {'nombre': 'Mouse Gamer', 'precio': 150.00},
-        {'nombre': 'Teclado Mecánico', 'precio': 300.00},
-    ]
-
-    total = sum(p['precio'] for p in productos)
-
-    template = get_template('boletas/boleta.html')
-    html = template.render({
-        'cliente': cliente,
-        'productos': productos,
-        'total': total,
-    })
-
-    response = HttpResponse(content_type='application/pdf')
-    response['Content-Disposition'] = 'attachment; filename="boleta.pdf"'
-
-    pisa_status = pisa.CreatePDF(
-        io.BytesIO(html.encode('utf-8')), dest=response, encoding='utf-8'
-    )
-
-    if pisa_status.err:
-        return HttpResponse('Error al generar el PDF')
-    return response
+class Boleta(models.Model):
+    productos = models.ManyToManyField(Producto)
+    fecha = models.DateTimeField(auto_now_add=True)

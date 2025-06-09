@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style>
+        body { font-family: Arial; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #000; padding: 8px; text-align: left; }
+        th { background-color: #eee; }
+    </style>
+</head>
+<body>
+    <h2>Boleta de Compra</h2>
+    <p><strong>Cliente:</strong> {{ cliente.nombre }}</p>
+    <p><strong>Correo:</strong> {{ cliente.correo }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio (S/)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+            <tr>
+                <td>{{ producto.nombre }}</td>
+                <td>{{ producto.precio }}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <th>Total</th>
+                <th>S/ {{ total }}</th>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
