@@ -1,0 +1,8 @@
+<h1>Frameworks de {{ lenguaje.name }}</h1>
+<ul>
+  {% for framework in frameworks %}
+    <li>{{ framework.name }}</li>
+  {% empty %}
+    <li>No hay frameworks registrados para este lenguaje.</li>
+  {% endfor %}
+</ul>
