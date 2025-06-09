@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'relacion_uno_muchos',
     'relacion_muchos_muchos',
+    'impresion_pdf',
 ]
 
 MIDDLEWARE = [
